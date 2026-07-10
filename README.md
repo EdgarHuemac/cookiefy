@@ -29,7 +29,7 @@ sudo cp cookiefy /usr/local/bin/
 ```
 
 ### Usage
-```
+```bash
 # basic usage
 cat burp_request.txt | cookiefy
 
@@ -45,9 +45,20 @@ cookiefy -o json request.txt
 cookiefy -p request.txt
 ```
 
+### Options
+
+| Option | Description |
+| :--- | :--- |
+| `-a`, `--add` | Add/override cookie (name=value) |
+| `-d`, `--delete` | Delete a cookie by name |
+| `-o`, `--output` | Output format (header, curl, python, json) |
+| `-p`, `--pretty` | Human-readable output |
+| `-s`, `--silent` | Suppress messages |
+| `--compare FILE` | Compare cookies with another request |
+
 ### Common Examples
 
-```
+```bash
 # pipe directly from clipboard (Burp)
 xclip -o | cookiefy
 
@@ -57,15 +68,6 @@ cookiefy -a "admin=true" -o python burp.txt
 # delete a cookie
 cookiefy -d "PHPSESSID" request.txt
 ```
-
-### Options
-
-"-a, --add",Add/override cookie (name=value)
-"-d, --delete",Delete a cookie by name
-"-o, --output","Output format (header, curl, python, json)"
-"-p, --pretty",Human-readable output
-"-s, --silent",Suppress messages
---compare FILE,Compare cookies with another request
 
 
 ### Why cookiefy

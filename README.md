@@ -6,7 +6,7 @@ Turn any Burp request/response into clean cookies instantly, with clipboard supp
 
 ---
 
-## Features
+### Features
 
 - Extract cookies from Burp Suite raw requests/responses
 - Add, override, or delete cookies on the fly
@@ -19,7 +19,7 @@ Turn any Burp request/response into clean cookies instantly, with clipboard supp
 - Automatic clipboard copy (Linux + macOS)
 - Lightweight and dependency-free
 
-## Installation
+### Installation
 
 ```bash
 git clone https://github.com/EdgarHuemac/cookiefy.git
@@ -28,8 +28,8 @@ chmod +x cookiefy
 sudo cp cookiefy /usr/local/bin/
 ```
 
-## Installation
-
+### Usage
+```
 # basic usage
 cat burp_request.txt | cookiefy
 
@@ -43,21 +43,22 @@ cookiefy -o json request.txt
 
 # pretty output
 cookiefy -p request.txt
+```
 
+### Common Examples
 
-## Common Examples
-
-# Pipe directly from clipboard (Burp)
+```
+# pipe directly from clipboard (Burp)
 xclip -o | cookiefy
 
-# Add a cookie and get Python format
+# add a cookie and get Python format
 cookiefy -a "admin=true" -o python burp.txt
 
-# Delete a cookie
+# delete a cookie
 cookiefy -d "PHPSESSID" request.txt
+```
 
-
-## Options
+### Options
 
 "-a, --add",Add/override cookie (name=value)
 "-d, --delete",Delete a cookie by name
@@ -67,7 +68,7 @@ cookiefy -d "PHPSESSID" request.txt
 --compare FILE,Compare cookies with another request
 
 
-## Why cookiefy
+### Why cookiefy
 
 Because manually cleaning Burp cookies is annoying.
 This tool makes copying, modifying, and reusing cookies frictionless.
